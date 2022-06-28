@@ -1,4 +1,5 @@
 import Neural.NeuralXOR;
+import Neural.TestData;
 
 import java.io.*;
 
@@ -9,13 +10,12 @@ public class Solution {
     private static double learningRate = 0.1d;
 
     public static void main(String[] args) throws IOException {
-//         NeuralXOR net = new NeuralXOR();
-        NeuralXOR net = loadNet();
-        System.out.println(net);
+         NeuralXOR net = new NeuralXOR();
 
-//        saveNet(net);
-//        TestData tester = new TestData(net);
-//        tester.startHardTest();
+
+
+        TestData tester = new TestData(net);
+        tester.startHardTest();
     }
 
     private static void saveNet(NeuralXOR net) {

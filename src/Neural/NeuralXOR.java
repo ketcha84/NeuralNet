@@ -1,5 +1,6 @@
 package Neural;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -13,7 +14,7 @@ import java.util.Arrays;
  * double learningRate - влияет на скорость обучения
  */
 public class NeuralXOR implements Serializable {
-
+    @Serial
     private static final long serialVersionUID = 1656354785726L; // Date : (27.03.2022 : 20:33)
 
     transient private double[] inputs = new double[2];
@@ -33,18 +34,18 @@ public class NeuralXOR implements Serializable {
     public NeuralXOR() {
         this.learningRate = 0L;
         this.mode = ModeNet.NORMAL;
-//        w1[0][0] = 0.6103314022204716;
-//        w1[0][1] = 0.5021948389376554;
-//        w1[1][0] = 0.4759116042155219;
-//        w1[1][1] = 0.4759116042155219;
-//
-//        w2[0] = 0.518656516584927;
-//        w2[1] = -0.0313434834150734;
+        w1[0][0] = 0.6103314022204716;
+        w1[0][1] = 0.5021948389376554;
+        w1[1][0] = 0.4759116042155219;
+        w1[1][1] = 0.4759116042155219;
+
+        w2[0] = 0.518656516584927;
+        w2[1] = -0.0313434834150734;
     }
 
     /**
-     * @param learningRate
-     * @param mode
+     * @param learningRate learning rate
+     * @param mode         working mode for neural net
      */
     public NeuralXOR(double learningRate, ModeNet mode) {
         this.learningRate = learningRate;
@@ -54,7 +55,6 @@ public class NeuralXOR implements Serializable {
                 Arrays.fill(w1[0], Math.random());
                 Arrays.fill(w1[1], Math.random());
                 Arrays.fill(w2, Math.random());
-                break;
             }
         }
     }
@@ -77,9 +77,9 @@ public class NeuralXOR implements Serializable {
     /**
      * Method for LEARNING mode
      *
-     * @param in
-     * @param expectedOutput
-     * @return
+     * @param in             array of inputs
+     * @param expectedOutput value of expected output
+     * @return double value the result of work net
      */
     public double startNet(double[] in, double expectedOutput) throws NeuralException {
         switch (mode) {
@@ -156,7 +156,7 @@ public class NeuralXOR implements Serializable {
 
     private void recalcWeight(double[] weights, double[] layer, double delta) {
         for (int i = 0; i < weights.length; i++) {
-            weights[i] = weights[i] - hL1[i] * delta * learningRate;
+            weights[i] = weights[i] - layer[i] * delta * learningRate;
         }
     }
 
