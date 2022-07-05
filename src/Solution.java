@@ -8,7 +8,7 @@ import java.io.*;
 public class Solution {
     private static double expectedOutput;
     private static double[] in;
-    private static double learningRate = 0.1d;
+    private static double learningRate = 0.01d;
 
     public static void main(String[] args) throws IOException {
          NeuralXOR net = new NeuralXOR(learningRate, ModeNet.LEARNING);
