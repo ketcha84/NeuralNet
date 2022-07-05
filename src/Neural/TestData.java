@@ -23,6 +23,7 @@ public class TestData {
                 try {
                     double res = neuralNet.startNet(in, getExpected(in));
                     System.out.println("inputs: " + Arrays.toString(in) + "\t||\tResult: " + res);
+                    System.out.println(neuralNet);
                 } catch (NeuralException e) {
                     e.printStackTrace();
                 }
