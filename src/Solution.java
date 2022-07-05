@@ -13,7 +13,6 @@ public class Solution {
          NeuralXOR net = new NeuralXOR();
 
 
-
         TestData tester = new TestData(net);
         tester.startSimpleTests();
     }
