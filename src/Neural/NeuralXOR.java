@@ -22,6 +22,7 @@ public class NeuralXOR implements Serializable {
     transient private double output;
     transient private double[] hL1 = new double[2];
     transient private ModeNet mode;
+    transient private int bias = 1;
 
     private double[][] w1 = new double[2][2];
     private double[] w2 = new double[2];
@@ -104,7 +105,7 @@ public class NeuralXOR implements Serializable {
     private double activationFunction(double[] in, double[] weight) {
         double sum = 0d;
         for (int i = 0; i < in.length; i++) {
-            sum += in[i] * weight[i];
+            sum += in[i] * weight[i] + bias;
         }
 //        return sum > 0.5 ? 1 : 0;
         return sigmoid(sum);
