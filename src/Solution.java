@@ -1,3 +1,4 @@
+import Neural.ModeNet;
 import Neural.NeuralXOR;
 import Neural.TestData;
 
@@ -10,7 +11,7 @@ public class Solution {
     private static double learningRate = 0.1d;
 
     public static void main(String[] args) throws IOException {
-         NeuralXOR net = new NeuralXOR();
+         NeuralXOR net = new NeuralXOR(learningRate, ModeNet.LEARNING);
 
 
         TestData tester = new TestData(net);
