@@ -15,7 +15,7 @@ public class Solution {
 
 
         TestData tester = new TestData(net);
-        tester.startHardTest();
+        tester.startSimpleTests();
     }
 
     private static void saveNet(NeuralXOR net) {

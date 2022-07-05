@@ -36,7 +36,7 @@ public class TestData {
             in[0] = Math.random();
             in[1] = Math.random();
             try {
-                double res = neuralNet.startNet(in,getExpected(in));
+                double res = neuralNet.startNet(in);
                 System.out.println("inputs: " + Arrays.toString(in) + "\t||\tExpected: " + getExpected(in) + "\t||\tResult: " + res);
             } catch (NeuralException e) {
                 e.printStackTrace();
