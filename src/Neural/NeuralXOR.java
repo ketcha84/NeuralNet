@@ -53,9 +53,16 @@ public class NeuralXOR implements Serializable {
         this.mode = mode;
         switch (mode) {
             case LEARNING -> {
-                Arrays.fill(w1[0], Math.random());
-                Arrays.fill(w1[1], Math.random());
-                Arrays.fill(w2, Math.random());
+//                Arrays.fill(w1[0], Math.random());
+//                Arrays.fill(w1[1], Math.random());
+//                Arrays.fill(w2, Math.random());
+                w1[0][0] = 0.6103314022204716;
+                w1[0][1] = 0.5021948389376554;
+                w1[1][0] = 0.4759116042155219;
+                w1[1][1] = 0.4759116042155219;
+
+                w2[0] = 0.518656516584927;
+                w2[1] = -0.0313434834150734;
             }
         }
     }
