@@ -46,10 +46,6 @@ public class TestData {
 
     }
 
-    private double activationFX(double x) {
-        return x > 0.5 ? 1 : 0;
-    }
-
     private double getExpected(double[] in) {
         int n1 = in[0] < 0.5 ? 0 : 1;
         int n2 = in[1] < 0.5 ? 0 : 1;
