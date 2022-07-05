@@ -18,16 +18,18 @@ public class TestData {
         tests.add(new double[]{1, 0});
         tests.add(new double[]{1, 1});
 
-        ArrayList<Double>results = new ArrayList<>();
+        ArrayList<Double> results = new ArrayList<>();
         results.add(0.2d);
         results.add(0.8d);
         results.add(0.8d);
         results.add(0.2d);
         double res = 0d;
         double[] in = new double[2];
+        int epoch = 0;
 
         do {
             for (int i = 0; i < 10000; i++) {
+                System.out.printf("////////////////////****************************/////////////////////\nEpoch#: %d\n", epoch);
                 for (int j = 0; j < tests.size(); j++) {
                     in = tests.get(j);
                     try {
@@ -38,7 +40,9 @@ public class TestData {
                         e.printStackTrace();
                     }
                 }
+                epoch++;
             }
+
         } while (res - results.get(3) != 0);
     }
 
