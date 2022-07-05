@@ -106,8 +106,8 @@ public class NeuralXOR implements Serializable {
         for (int i = 0; i < in.length; i++) {
             sum += in[i] * weight[i];
         }
-        return sum > 0.5 ? 1 : 0;
-//        return sigmoid(sum);
+//        return sum > 0.5 ? 1 : 0;
+        return sigmoid(sum);
     }
 
     private double sigmoid(double x) {
