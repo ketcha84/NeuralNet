@@ -54,9 +54,9 @@ public class TestData {
         int n2 = in[1] < 0.5 ? 0 : 1;
 
         if (n1 + n2 == 2 || n1 + n2 == 0) {
-            return 0;
+            return 0.2d;
         } else {
-            return 1;
+            return 0.8d;
         }
     }
 }
