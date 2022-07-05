@@ -169,7 +169,7 @@ public class NeuralXOR implements Serializable {
     }
 
     private double delta(double actual, double error) {
-        return error * (sigmoid(actual) * (1 - (sigmoid(actual))));
+        return error * actual * (1 - actual);
     }
 
     //-------------------------------------------- getters and setters
