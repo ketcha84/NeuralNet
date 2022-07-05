@@ -17,6 +17,12 @@ public class TestData {
         tests.add(new double[]{0, 1});
         tests.add(new double[]{1, 0});
         tests.add(new double[]{1, 1});
+
+        ArrayList<Double>results = new ArrayList<>();
+        results.add(0.2d);
+        results.add(0.8d);
+        results.add(0.8d);
+        results.add(0.2d);
         double res = 0d;
         double[] in = new double[2];
 
@@ -25,7 +31,7 @@ public class TestData {
                 for (int j = 0; j < tests.size(); j++) {
                     in = tests.get(j);
                     try {
-                        res = neuralNet.startNet(in, getExpected(in));
+                        res = neuralNet.startNet(in, results.get(j));
                         System.out.println("inputs: " + Arrays.toString(in) + "\t||\tResult: " + res);
                         System.out.println(neuralNet);
                     } catch (NeuralException e) {
@@ -33,7 +39,7 @@ public class TestData {
                     }
                 }
             }
-        } while (res - getExpected(in) != 0);
+        } while (res - results.get(3) != 0);
     }
 
     public void startHardTest() {
