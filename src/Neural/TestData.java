@@ -21,7 +21,7 @@ public class TestData {
         for (int i = 0; i < 10000; i++) {
             for (double[] in : tests) {
                 try {
-                    double res = neuralNet.startNet(in);
+                    double res = neuralNet.startNet(in, getExpected(in));
                     System.out.println("inputs: " + Arrays.toString(in) + "\t||\tResult: " + res);
                 } catch (NeuralException e) {
                     e.printStackTrace();
